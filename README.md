@@ -10,6 +10,6 @@ The integration of AI with CRM systems is an emerging trend that has garnered si
 To implement the proposed project, the digital assets such as product categories, images, details, etc. need to be analysed and converted into ranked based scores based on the customer interactions. It would be possible to identify and extract relevant information, such as product features, attributes, and specifications, and represent them in a structured format that can be easily queried by AI (NLP, LLMs) models. This would enable the development of more sophisticated language models that can provide more context-based responses when a CRM user queries about a product, colour, design, category, and other related topics such as why not try a new category, next best purchase option and recommendation, etc.
 
 ## References
-1. Implementation : 
+1. Implementation : https://www.philschmid.de/fine-tune-llms-in-2024-with-trl
 2. .gitignore : https://github.com/github/gitignore/blob/main/Python.gitignore
 3. sanitized-mbpp.json : https://github.com/google-research/google-research/tree/master/mbpp
