@@ -17,15 +17,19 @@ This guide here provides step-by-step instructions for preparing a custom datase
 The custom dataset should have at least the following columns:
 
 *Question (or Query)*
+
 This column contains end-user queries directed towards the system. In the context of this use-case, queries originate from CRM users seeking insights from data sources.
 
 *Context*
+
 Additional information about the database and its contents. This provides background or contextual information necessary to understand the queries and provide the solutions accordingly.
 
 *Solution (or Original Answer)*
+
 Python functions that, when executed on the databases, provide the necessary information to fulfill user queries. Solutions may include in-line comments or docstrings for clarity and documentation purposes.
 
-*Steps to Prepare the Dataset*
+***Steps to Prepare the Dataset***
+
 - Gather Questions: Collect a set of questions or queries that represent typical inquiries made by CRM users. These queries should cover a range of scenarios and topics relevant to the CRM system and transactional databases.
 
 - Provide Context: For each question, provide context about the databases and their contents. This may include descriptions of database schemas, data tables, key entities, and relevant business rules or processes.
@@ -33,10 +37,12 @@ Python functions that, when executed on the databases, provide the necessary inf
 - Create Solutions: Develop Python functions that, when executed on the databases, retrieve the necessary information to address the queries effectively. These functions should be designed to handle the specified queries and provide accurate results. Include in-line comments or docstrings within the functions to explain their functionality and usage.
 
 - Prepare the Dataset Files:
-    CRM_data.csv (with Comments): Create a CSV file containing the prepared dataset, including comments within the solution column. These comments provide additional insights into the logic and implementation of the Python functions.
-    CRM_data_no_comments.csv (Without Comments): Optionally, create a second CSV file containing the dataset without comments in the solution column. This version may be suitable for scenarios where comments are not required or when focusing solely on the query and solution pairs.
 
-The helper script validate_custom_data.ipynb helps in validating the functions captured in the custom dataset files.
+  + [CRM_data.csv](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/CRM_data.csv) (with Comments): Create a CSV file containing the prepared dataset, including comments within the solution column. These comments provide additional insights into the logic and implementation of the Python functions.
+
+  + [CRM_data_no_comments.csv](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/CRM_data_no_comments.csv) (Without Comments): Optionally, create a second CSV file containing the dataset without comments in the solution column. This version may be suitable for scenarios where comments are not required or when focusing solely on the query and solution pairs.
+
+The helper script [validate_custom_data.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/validate_custom_data.ipynb) helps in validating the functions captured in the custom dataset files.
 
 ## References
 1. Implementation : https://www.philschmid.de/fine-tune-llms-in-2024-with-trl
