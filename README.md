@@ -51,7 +51,7 @@ The script [data_prep.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/ma
 
 ## Reports
 
-- [01_finetune_mistral](https://wandb.ai/nayan4learn/01-finetune-mistral/reports/Train-loss-vs-Eval-loss--Vmlldzo3NjI4NzIy)
+- [01_finetune_mistral](https://api.wandb.ai/links/nayan4learn/trqkrrp8)
 
 ## References
 1. Implementation : https://www.philschmid.de/fine-tune-llms-in-2024-with-trl
