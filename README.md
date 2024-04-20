@@ -49,6 +49,10 @@ The script [data_prep.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/ma
   + [val_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/val_CRM_data.json): Validation dataset in JSON format
   + [test_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/test_CRM_data.json): Test dataset in JSON format
 
+## Reports
+
+- [01_finetune_mistral](https://wandb.ai/nayan4learn/01-finetune-mistral/reports/Train-loss-vs-Eval-loss--Vmlldzo3NjI4NzIy)
+
 ## References
 1. Implementation : https://www.philschmid.de/fine-tune-llms-in-2024-with-trl
 2. .gitignore : https://github.com/github/gitignore/blob/main/Python.gitignore
