@@ -42,7 +42,12 @@ Python functions that, when executed on the databases, provide the necessary inf
 
   + [CRM_data_no_comments.csv](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/CRM_data_no_comments.csv) (Without Comments): Optionally, create a second CSV file containing the dataset without comments in the solution column. This version may be suitable for scenarios where comments are not required or when focusing solely on the query and solution pairs.
 
-The helper script [validate_custom_data.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/validate_custom_data.ipynb) helps in validating the functions captured in the custom dataset files.
+The script [validate_custom_data.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/validate_custom_data.ipynb) helps in validating the functions captured in the custom dataset files.
+
+The script [data_prep.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data_prep.ipynb) helps in creating the training (80%), validation (10%) and testing (Remaining) datasets.
+  + [train_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/train_CRM_data.json): Training dataset in JSON format
+  + [val_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/val_CRM_data.json): Validation dataset in JSON format
+  + [test_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/test_CRM_data.json): Test dataset in JSON format
 
 ## References
 1. Implementation : https://www.philschmid.de/fine-tune-llms-in-2024-with-trl
