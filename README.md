@@ -9,7 +9,84 @@ The integration of AI with CRM systems is an emerging trend that has garnered si
 
 To implement the proposed project, the digital assets such as product categories, images, details, etc. need to be analysed and converted into ranked based scores based on the customer interactions. It would be possible to identify and extract relevant information, such as product features, attributes, and specifications, and represent them in a structured format that can be easily queried by AI (NLP, LLMs) models. This would enable the development of more sophisticated language models that can provide more context-based responses when a CRM user queries about a product, colour, design, category, and other related topics such as why not try a new category, next best purchase option and recommendation, etc.
 
-## Steps
+## Recommendation System
+
+### Overview
+
+Here it contains notebooks detailing the development process of a recommendation system for retail business. The project aims to construct a robust recommendation model leveraging data preprocessing, synthetic data generation, and deep learning techniques.
+
+### Notebooks
+
+#### Notebook 1: Data Preparation [10_data_preparation.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/10_data_preparation.ipynb)
+
+In this notebook, data from the Olist e-commerce platform is loaded and prepared. The following steps are executed:
+
+- Extracting relevant columns from orders and customers datasets.
+- Merging datasets based on customer ID.
+- Loading order items and order reviews datasets, aggregating order items and calculating average review scores per order.
+- Loading products dataset and translating product category names.
+- Merging product information with order data and generating SKUs for product categories.
+- Rearranging columns and exporting cleaned dataset to a CSV file.
+
+##### References:
+
+- https://medium.com/codex/tensorflow-deep-learning-recommenders-on-retail-dataset-ce0c50aff5fa
+
+- Source Dataset Citation - Olist, and André Sionek. (2018). Brazilian E-Commerce Public Dataset by Olist [Data set]. Kaggle. https://doi.org/10.34740/KAGGLE/DSV/195341
+
+#### Notebook 2: Synthetic Data Generation [20_create_synthetic_data.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/20_create_synthetic_data.ipynb)
+
+This notebook demonstrates the process of generating synthetic transaction data using the sdv library in Python. Key steps include:
+
+- Loading original transaction data into a DataFrame.
+- Creating metadata using SingleTableMetadata class from sdv.
+- Synthesizing new data using GaussianCopulaSynthesizer with constraints.
+- Evaluating synthetic data quality and comparing it with the original dataset.
+- Generating consistent primary key generation like order IDs.
+- Saving synthetic transaction data to a CSV file.
+
+##### References:
+
+- SDV is a public, source-available Python library for generating and evaluating synthetic data. You can download and use it under the Business Source License.
+
+License: https://github.com/sdv-dev/SDV/blob/main/LICENSE
+
+#### Notebook 3: Recommendation System Development [30_auto_DCN.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/30_auto_DCN.ipynb)
+
+This notebook focuses on building recommendation systems using collaborative filtering and deep learning techniques. Key steps involved are:
+
+- Preprocessing transactional data, scaling, and transforming interactions for modeling.
+- Creating TensorFlow datasets and defining models for collaborative filtering and a Deep & Cross Network (DCN).
+- Training and evaluating models using different configurations, monitoring metrics like RMSE on validation sets.
+- Selecting the best-performing model based on evaluation results.
+- Visualizing RMSE of different models across various interaction volumes.
+- Evaluating the best model's performance on a test set and analyzing predictions.
+- Plotting RMSE versus the number of interactions and analyzing performance trends.
+
+##### References:
+
+- https://www.tensorflow.org/recommenders/examples/dcn
+
+- https://arxiv.org/pdf/2008.13535.pdf
+
+### Execution Order
+
+The notebooks need to be executed in the following order:
+
+1. Data Preparation (Notebook 1)
+2. Synthetic Data Generation (Notebook 2)
+3. Recommendation System Development (Notebook 3)
+
+### Important Considerations
+
+- Ensure notebooks are executed sequentially to maintain dependencies.
+- Evaluate synthetic data quality before use to ensure fidelity.
+- Consider resource constraints, particularly regarding memory usage, during model training and complexity decisions.
+- Explore alternative evaluation metrics or techniques for performance enhancement.
+- Keep in mind the focus of the project on building a prototype using ranking scores as a representational substitute of digital asset management artifacts.
+
+## Steps for text to python code generation
+
 1. Custom dataset preparation Guide:
 
 This guide here provides step-by-step instructions for preparing a custom dataset for use of this project involving CRM (Customer Relationship Management) user queries and various data sources such as customer master, product master, user and item interaction, etc.
