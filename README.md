@@ -85,52 +85,61 @@ The notebooks need to be executed in the following order:
 - Explore alternative evaluation metrics or techniques for performance enhancement.
 - Keep in mind the focus of the project on building a prototype using ranking scores as a representational substitute of digital asset management artifacts.
 
-## Steps for text to python code generation
+## Text to Python Code Generation
 
-1. Custom dataset preparation Guide:
+### Custom dataset preparation Guide:
 
-This guide here provides step-by-step instructions for preparing a custom dataset for use of this project involving CRM (Customer Relationship Management) user queries and various data sources such as customer master, product master, user and item interaction, etc.
+This guide provides step-by-step instructions for preparing a custom dataset for use in projects involving CRM (Customer Relationship Management) user queries and various data sources such as customer master, product master, user and item interaction, etc.
+
+#### Dataset Columns
 
 The custom dataset should have at least the following columns:
 
-*Question (or Query)*
+- **Question (or Query)**: End-user queries directed towards the system. These queries originate from CRM users seeking insights from data sources.
+  
+- **Context**: Additional information about the database and its contents. This provides background or contextual information necessary to understand the queries and provide the solutions accordingly.
+  
+- **Solution (or Original Answer)**: Python functions that, when executed on the databases, provide the necessary information to fulfill user queries. Solutions may include in-line comments or docstrings for clarity and documentation purposes.
 
-This column contains end-user queries directed towards the system. In the context of this use-case, queries originate from CRM users seeking insights from data sources.
+#### Steps to Prepare the Dataset
 
-*Context*
+1. **Gather Questions**: Collect a set of questions or queries that represent typical inquiries made by CRM users. These queries should cover a range of scenarios and topics relevant to the CRM system and transactional databases.
 
-Additional information about the database and its contents. This provides background or contextual information necessary to understand the queries and provide the solutions accordingly.
+2. **Provide Context**: For each question, provide context about the databases and their contents. This may include descriptions of database schemas, data tables, key entities, and relevant business rules or processes.
 
-*Solution (or Original Answer)*
+3. **Create Solutions**: Develop Python functions that, when executed on the databases, retrieve the necessary information to address the queries effectively. These functions should be designed to handle the specified queries and provide accurate results. Include in-line comments or docstrings within the functions to explain their functionality and usage.
 
-Python functions that, when executed on the databases, provide the necessary information to fulfill user queries. Solutions may include in-line comments or docstrings for clarity and documentation purposes.
+4. **Prepare the Dataset Files**:
 
-***Steps to Prepare the Dataset***
+   - [CRM_data.csv](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/CRM_data.csv) (with Comments): CSV file containing the prepared dataset, including comments within the solution column for additional insights into the logic and implementation of the Python functions.
+   
+   - [CRM_data_no_comments.csv](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/CRM_data_no_comments.csv) (Without Comments): Optionally, a second CSV file containing the dataset without comments in the solution column, suitable for scenarios where comments are not required.
 
-- Gather Questions: Collect a set of questions or queries that represent typical inquiries made by CRM users. These queries should cover a range of scenarios and topics relevant to the CRM system and transactional databases.
+#### Validation and Training
 
-- Provide Context: For each question, provide context about the databases and their contents. This may include descriptions of database schemas, data tables, key entities, and relevant business rules or processes.
+- The script [40_validate_custom_data.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/40_validate_custom_data.ipynb) helps in validating the functions captured in the custom dataset files.
 
-- Create Solutions: Develop Python functions that, when executed on the databases, retrieve the necessary information to address the queries effectively. These functions should be designed to handle the specified queries and provide accurate results. Include in-line comments or docstrings within the functions to explain their functionality and usage.
+- The script [50_message_data_preperation.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/50_message_data_preperation.ipynb) aids in creating the training (80%), validation (10%), and testing (remaining) datasets, stored in JSON format:
+  - [train_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/train_CRM_data.json): Training dataset
+  - [val_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/val_CRM_data.json): Validation dataset
+  - [test_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/test_CRM_data.json): Test dataset
 
-- Prepare the Dataset Files:
+#### Model Fine-tuning
 
-  + [CRM_data.csv](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/CRM_data.csv) (with Comments): Create a CSV file containing the prepared dataset, including comments within the solution column. These comments provide additional insights into the logic and implementation of the Python functions.
+- The script [60_finetune_mistral.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/60_finetune_mistral.ipynb) is used to fine-tune the Mistral AI model for better generating Python functions based on the given user questions and contextual information around available data sources and assets.
 
-  + [CRM_data_no_comments.csv](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/CRM_data_no_comments.csv) (Without Comments): Optionally, create a second CSV file containing the dataset without comments in the solution column. This version may be suitable for scenarios where comments are not required or when focusing solely on the query and solution pairs.
+##### References:
 
-The script [validate_custom_data.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/validate_custom_data.ipynb) helps in validating the functions captured in the custom dataset files.
+- https://github.com/brevdev/notebooks/blob/main/mistral-finetune-own-data.ipynb
 
-The script [data_prep.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/data_prep.ipynb) helps in creating the training (80%), validation (10%) and testing (Remaining) datasets.
-  + [train_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/train_CRM_data.json): Training dataset in JSON format
-  + [val_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/val_CRM_data.json): Validation dataset in JSON format
-  + [test_CRM_data.json](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/data/test_CRM_data.json): Test dataset in JSON format
+- https://arxiv.org/abs/2106.09685v2 This is a lossy method but established to provide quite good performance
 
-## Reports
+#### Reports
 
 - [01_finetune_mistral](https://api.wandb.ai/links/nayan4learn/trqkrrp8)
 
-## References
+##### Other References
+
 1. Implementation : https://www.philschmid.de/fine-tune-llms-in-2024-with-trl
 2. .gitignore : https://github.com/github/gitignore/blob/main/Python.gitignore
 3. sanitized-mbpp.json : https://github.com/google-research/google-research/tree/master/mbpp
