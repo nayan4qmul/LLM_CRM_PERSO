@@ -144,3 +144,13 @@ The custom dataset should have at least the following columns:
 2. .gitignore : https://github.com/github/gitignore/blob/main/Python.gitignore
 3. sanitized-mbpp.json : https://github.com/google-research/google-research/tree/master/mbpp
 4. english_python_data.txt : https://github.com/divyam96/English-to-Python-Converter/blob/main/README.md
+
+#### Model RAG (Semantic Search) Inferencing
+
+- The script [70_semantic_search_RAG_inference.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/70_semantic_search_RAG_inference.ipynb) demonstrates the implementation of Retrieval-Augmented Generation (RAG), a technique that enhances text generation by leveraging semantic search to retrieve relevant context from a large database. The integration of semantic search enables the model to produce more accurate and contextually appropriate text outputs.
+
+##### References:
+
+- https://www.sbert.net/examples/applications/semantic-search/README.html
+
+- https://www.sbert.net/docs/pretrained_models.html
