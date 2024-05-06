@@ -147,10 +147,12 @@ The custom dataset should have at least the following columns:
 
 #### Model RAG (Semantic Search) Inferencing
 
-- The script [70_semantic_search_RAG_inference.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/70_semantic_search_RAG_inference.ipynb) demonstrates the implementation of Retrieval-Augmented Generation (RAG), a technique that enhances text generation by leveraging semantic search to retrieve relevant context from a large database. The integration of semantic search enables the model to produce more accurate and contextually appropriate text outputs.
+- The script [70_semantic_search_RAG_inference.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/70_semantic_search_RAG_inference.ipynb) demonstrates the implementation of Retrieval-Augmented Generation (RAG), a technique that enhances text generation by leveraging semantic search to retrieve relevant context from a large database. The integration of semantic search enables the model to produce more accurate and contextually appropriate text outputs. The iterative error handling strategy used in the notebook shows progressive accuracy improvement across passes, indicating effectiveness; however, residual errors suggest potential model limitations and underscore the need for continued refinement.
 
 ##### References:
 
 - https://www.sbert.net/examples/applications/semantic-search/README.html
 
 - https://www.sbert.net/docs/pretrained_models.html
+
+- https://paperswithcode.com/sota/code-generation-on-humaneval
