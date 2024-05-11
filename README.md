@@ -156,3 +156,24 @@ The custom dataset should have at least the following columns:
 - https://www.sbert.net/docs/pretrained_models.html
 
 - https://paperswithcode.com/sota/code-generation-on-humaneval
+
+## E-2-E system implementation
+
+### Overview
+
+The system analyses its digital footprint, and considers recommendations leveraging DCN networks for performance enhancement. The system processes transaction data, standardizes ratings, and calculates interaction scores, subsequently categorizing them and generating unique order IDs. Additionally, it provides functions for user query processing, response generation, and code execution. While exhibiting resilience in error handling and satisfactory response generation, there's room for improvement in code efficiency and user experience, particularly in response time and error management. Nonetheless, the system demonstrates capability in answering queries and deriving insights from data sources.
+
+### Notebook
+
+[80_crm_perso_ai.ipynb](https://github.com/brevdev/notebooks/blob/main/80_crm_perso_ai.ipynb)
+
+The notebook considers representation of the actual digital footprint within the organisation including accurate recommendations from DCN networks for better performance, user experience and asset management. Here in particular, the code essentially processes transaction data, aggregates interactions, standardizes ratings, calculates scores, and prepares the data for downstream analysis. It then uses various functions collectively that enables the system to process user queries, generate responses, and execute generated code to provide desired functionality.
+
+The actual execution of the system provides valuable insights into its performance, strengths, and areas for improvement.
+
+1. There's noticeable variation in response times across different queries. Some queries had a relatively quicker response time compared to others. Even the execution efficiency varies for different types of queries.
+2. The system demonstrates resilience in error handling, as seen in some of the query responses. Despite encountering errors during execution, the system attempted to recover and provide a response. This ability to handle errors gracefully enhances the user experience and reliability of the system. One potential option may be feed in the errors observed from various responses as an active learning material. When the system encounters errors in responses, we can use these mistakes as learning opportunities. By feeding these errors back into the training process, the system can learn from them and improve its ability to handle similar situations in the future. This helps the system get better at answering questions, especially when it doesn't have a lot of data to learn from initially.
+3. The model's performance in generating responses appears satisfactory overall. It successfully generates Python function definitions in response to user queries, which align with the expected functionality. However, there may be room for improvement in refining the generated code to be more concise and efficient.
+4. The user experience is affected by factors such as response time and error handling. While faster response times contribute to a smoother user experience, longer delays or errors may lead to frustration or dissatisfaction. Improvements in performance and error handling mechanisms could enhance the overall user experience.
+5. The system can answer general and simple question that it has not seen earlier explicitly. It can effectively perform derivations from the given data sources. Currently it lacks the ability to answer multiple queries in one question and responses to the first query only. However, it can still handle all the questions if asked one by one separately.
+6. With the help of additional resources, the current implementation can be extended to produce the response in a conversational format by persisting the historical responses from the past system interaction automatically thereby enhancing further the user experiences.
