@@ -165,7 +165,7 @@ The system analyses its digital footprint, and considers recommendations leverag
 
 ### Notebook
 
-[80_crm_perso_ai.ipynb](https://github.com/brevdev/notebooks/blob/main/80_crm_perso_ai.ipynb)
+[80_crm_perso_ai.ipynb](https://github.com/nayan4qmul/LLM_CRM_PERSO/blob/main/scripts/80_crm_perso_ai.ipynb)
 
 The notebook considers representation of the actual digital footprint within the organisation including accurate recommendations from DCN networks for better performance, user experience and asset management. Here in particular, the code essentially processes transaction data, aggregates interactions, standardizes ratings, calculates scores, and prepares the data for downstream analysis. It then uses various functions collectively that enables the system to process user queries, generate responses, and execute generated code to provide desired functionality.
 
