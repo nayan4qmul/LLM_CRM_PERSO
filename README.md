@@ -9,6 +9,22 @@ The integration of AI with CRM systems is an emerging trend that has garnered si
 
 To implement the proposed project, the digital assets such as product categories, images, details, etc. need to be analysed and converted into ranked based scores based on the customer interactions. It would be possible to identify and extract relevant information, such as product features, attributes, and specifications, and represent them in a structured format that can be easily queried by AI (NLP, LLMs) models. This would enable the development of more sophisticated language models that can provide more context-based responses when a CRM user queries about a product, colour, design, category, and other related topics such as why not try a new category, next best purchase option and recommendation, etc.
 
+## High Level Process Flow Diagram
+
+```mermaid
+graph TD
+    A[Take in user query] --> B[Perform semantic search using user query]
+    B --> C[Retrieve additional context on data sources involved]
+    C --> D[Feed in user query and additional context into fine tuned LLM]
+    D --> E[LLM generates a python code function]
+    E --> F[Python function executes on data from user item interactions and recommendations]
+    F --> G[Result is shared with user for review]
+```
+
+##### References:
+
+- https://mermaid.js.org/intro/getting-started.html
+
 ## Recommendation System
 
 ### Overview
